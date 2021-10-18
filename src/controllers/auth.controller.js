@@ -3,7 +3,7 @@ const User = require("../models/user.model");
 require("dotenv").config();
 
 const newToken = (user) => {
-  return jwt.sign({ id: user._id }, process.env.JWT_KEY);
+  return jwt.sign({ id: user._id }, process.env.JWT_KEY || "high_dash");
 };
 
 const register = async (req, res) => {
